@@ -3,6 +3,10 @@
 #include <fstream>
 #include <iostream>
 #include <filesystem>
+#include <chrono>
+#include <sstream> 
+#include <iomanip> 
+#include <ctime>
 using namespace std::filesystem;
 
 class VCS{
@@ -10,34 +14,18 @@ private:
 	int version_number;
 	std::string file_path;
 	info version_info;
+	path directory_path;
 
-	path create_directory_path(const std::string& object_path) {
-		std::string file_name;
-		for (char c : object_path) {
-			if (c == '.')
-				break;
-			file_name += c;
-		}
-		path directory_path = "versions_of_" + file_name;
-		return directory_path;
-	}
-	
-	void make_info_file(std::ofstream& info_file) {
-		std::string message;
-		std::cout << "Please enter your message for your version if you want: ";
-		std::getline(std::cin, message);
-		if (message.empty())
-			message = "changes saved";
-		version_info.set(version_number, message);
-		info_file << "version: " << version_info.version << "\n"
-			<< "date: " << version_info.date << "\n"
-			<< "message: " << version_info.message;
-	}
+	path create_directory_path(const std::string&);
+	void make_info_file(std::ofstream&);
+	void clear_files(std::ifstream& , std::ifstream&);
+	bool check_versions(std::ifstream& , std::ifstream&);
+	std::string set_time();
+
 public:
-	VCS(const std::string& object_path);
-
+	VCS(const std::string&);
 	void save();
-
 	void list();
+	void go_to_version(int);
 };
 

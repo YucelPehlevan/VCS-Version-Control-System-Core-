@@ -1,7 +1,6 @@
 #include "VCS.h"
 
 int main() {
-	VCS object("new.txt");
+	VCS object("test.txt");
 	object.save();
-	object.list();
 }
