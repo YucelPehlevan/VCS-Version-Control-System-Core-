@@ -30,7 +30,7 @@ Intentionally kept simple and educational
 Requires a C++17 compatible compiler.
 g++ -std=c++17 main.cpp VCS.cpp -o mini_vcs
 
-#🇹🇷 Türkçe
+# 🇹🇷 Türkçe
 
 📌 Proje Hakkında
 mini_VCS, tek bir dosya üzerinde çalışan, temel sürüm kontrol (version control) mantığını öğretmek ve denemek amacıyla geliştirilmiş C++ tabanlı minimal bir VCS çekirdeğidir.
