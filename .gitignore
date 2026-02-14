@@ -1,0 +1,21 @@
+# Visual Studio
+x64/
+Debug/
+Release/
+*.vcxproj.user
+
+# Build artifacts
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.idb
+*.log
+*.tlog
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# VCS runtime output
+versions_of_*/
